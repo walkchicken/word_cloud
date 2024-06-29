@@ -1,8 +1,8 @@
 import { ref, onValue, push } from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
-import FirebaseConfig from "./firebase";
+import {firebaseConfig} from "./firebase";
 
-const database = FirebaseConfig();
+const database = firebaseConfig
 
 export const readWords = async (setWords) => {
   return onValue(ref(database, "/words"), (snapshot) => {
