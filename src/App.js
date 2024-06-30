@@ -63,8 +63,10 @@ export default function App() {
     spiral: "archimedean",
     transitionDuration: 1000
   };
-
-
+  
+  const callbacks = {
+    getWordTooltip: (word) => null
+  };
 
   return (
     <>
@@ -88,7 +90,9 @@ export default function App() {
           style={resizeStyle}
         >
           <div style={{ width: "100%", height: "100%" }}>
-            <ReactWordcloud options={options} words={wordCloudData} />
+            <ReactWordcloud options={options} words={wordCloudData}
+              callbacks={callbacks}
+             />
           </div>
         </Resizable>
       </div>
